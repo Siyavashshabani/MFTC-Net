@@ -31,13 +31,21 @@ from monai.data import (
     decollate_batch,
     set_track_meta,
 )
+# train the model
+from monai.transforms import AsDiscrete
+from monai.metrics import DiceMetric
 
-def validation(epoch_iterator_val):
+
+def validation(model, epoch_iterator_val, config, global_step):
+    post_label = AsDiscrete(to_onehot=config["num_classes"])
+    post_pred = AsDiscrete(argmax=True, to_onehot=config["num_classes"])
+    dice_metric = DiceMetric(include_background=True, reduction="mean", get_not_nans=False)
+
     model.eval()
     with torch.no_grad():
         dice = []
         for batch in epoch_iterator_val:
-            val_inputs, val_labels = (batch["image"].cuda(), batch["label"].cuda())
+            val_inputs, val_labels = (batch["image"].cuda(), config["input_size"].cuda())
             with torch.cuda.amp.autocast():
                 val_outputs = sliding_window_inference(val_inputs, (128, 128, 128), 1, model)
             val_labels_list = decollate_batch(val_labels)
@@ -53,7 +61,15 @@ def validation(epoch_iterator_val):
     return mean_dice_val
 
 
-def train(global_step, train_loader, dice_val_best, global_step_best):
+def train(model, global_step, train_loader,val_loader,config, dice_val_best, global_step_best):
+
+    # loss function and optimizer
+    torch.backends.cudnn.benchmark = True
+    loss_function = DiceCELoss(to_onehot_y=True, softmax=True)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=config["learning_rate"], weight_decay=config["weight_decay"])
+    scaler = torch.cuda.amp.GradScaler()
+
+    ## start train the model
     model.train()
     epoch_loss = 0
     step = 0
@@ -70,17 +86,17 @@ def train(global_step, train_loader, dice_val_best, global_step_best):
         scaler.step(optimizer)
         scaler.update()
         optimizer.zero_grad()
-        epoch_iterator.set_description(f"Training ({global_step} / {max_iterations} Steps) (loss={loss:2.5f})")
-        if (global_step % eval_num == 0 and global_step != 0) or global_step == max_iterations:
+        epoch_iterator.set_description(f"Training ({global_step} / {config["max_iterations"]} Steps) (loss={loss:2.5f})")
+        if (global_step % config["eval_num"] == 0 and global_step != 0) or global_step == config["max_iterations"]:
             epoch_iterator_val = tqdm(val_loader, desc="Validate (X / X Steps) (dice=X.X)", dynamic_ncols=True)
-            dice_val = validation(epoch_iterator_val)
+            dice_val = validation(epoch_iterator_val, config, global_step)
             epoch_loss /= step
-            epoch_loss_values.append(epoch_loss)
-            metric_values.append(dice_val)
+            # epoch_loss_values.append(epoch_loss)
+            # metric_values.append(dice_val)
             if dice_val > dice_val_best:
                 dice_val_best = dice_val
                 global_step_best = global_step
-                torch.save(model.state_dict(), os.path.join(root_dir, "MultiEncoders_Swin_UNETR_vanila_tunned_2_FusionBlock_synapse_12Mar.pth"))
+                torch.save(model.state_dict(), os.path.join(config["saved_model_dir"], "best_model.pth"))
                 print(
                     "Model Was Saved ! Current Best Avg. Dice: {} Current Avg. Dice: {}".format(dice_val_best, dice_val)
                 )
