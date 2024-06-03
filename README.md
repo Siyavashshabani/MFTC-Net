@@ -59,7 +59,9 @@ The following settings can be adjusted in the `config.py` to configure the model
 ```
 python3.10 main.py  
 ```
-### Interface 
+### Results
+
+### Testing 
 Comming soon 
 
 ### Citation
