@@ -1,6 +1,6 @@
 
 
-# Quck start
+# Quick start
 
 Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 
