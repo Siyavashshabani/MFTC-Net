@@ -30,7 +30,7 @@ data/
 
 ### Running the Code
 
-This repository is built upon the foundational work provided in [SENUCLS](https://github.com/LeonidAlekseev/Swin-UNETR). 
+This repository is built upon the foundational work provided in [Synapse](https://github.com/LeonidAlekseev/Swin-UNETR). 
 
 
 ## Training
