@@ -54,3 +54,9 @@ The following settings can be adjusted in the `config.py` to configure the model
 - **`eval_num`**: Set the frequency of evaluations (every `eval_num` iterations) during training.
 
 
+## train the model 
+
+```
+python3.10 main.py  
+```
+
