@@ -32,7 +32,6 @@ from monai.data import (
     set_track_meta,
 )
 
-
 class ConvertLabelsToZero(MapTransform):
     """
     This custom transformation will convert specified labels to zero.
@@ -143,7 +142,7 @@ def data_transformers(num_samples, device):
 
 
 def data_loaders(data_dir, num_samples, device):
-  split_json = "dataset_0.json"
+  split_json = "dataset.json"
   datasets = data_dir + split_json
   train_transforms, val_transforms = data_transformers(num_samples, device)
   datalist = load_decathlon_datalist(datasets, True, "training")

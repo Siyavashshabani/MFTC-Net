@@ -1,7 +1,7 @@
 {
-    "data_dir": "path/to/your/data",
-    "saved_model_dir": "path/to/your/data",
-    "num_samples": 3,
+    "data_dir": "./data/",
+    "saved_model_dir": "./saved_model_dir/",
+    "num_samples": 1,
     "num_classes": 9,
     "input_size": 128,
     "input_channels": 1,

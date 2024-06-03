@@ -6,11 +6,11 @@ from tqdm import tqdm
 from monai.losses import DiceCELoss
 from train.utils import train
 from model.MFTCNet import MFTCNet
-from loader import data_loaders
+from loader.loader import data_loaders
 
 def main():
     # Load hyperparameters from JSON file
-    with open('config.json', 'r') as config_file:
+    with open('configs.json', 'r') as config_file:
         config = json.load(config_file)
 
     # datasets
@@ -32,7 +32,6 @@ def main():
     global_step_best = 0
     while global_step < config["max_iterations"]:
         global_step, dice_val_best, global_step_best = train(model, global_step, train_loader, val_loader,config, dice_val_best, global_step_best)
-    # model.load_state_dict(torch.load(os.path.join(root_dir, "best_model.pth")))
 
 if __name__ == "__main__":
     main()

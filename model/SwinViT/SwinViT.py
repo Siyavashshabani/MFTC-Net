@@ -1,7 +1,7 @@
 
-from models.SwinViT.utils import BasicLayer 
+from __future__ import annotations
+from model.SwinViT.utils import BasicLayer 
 import torch
-rom __future__ import annotations
 
 import itertools
 from collections.abc import Sequence
@@ -19,6 +19,7 @@ from monai.networks.blocks import PatchEmbed, UnetOutBlock, UnetrBasicBlock, Une
 from monai.networks.layers import DropPath, trunc_normal_
 from monai.utils import ensure_tuple_rep, look_up_option, optional_import
 from monai.utils.deprecate_utils import deprecated_arg
+rearrange, _ = optional_import("einops", name="rearrange")
 
 
 

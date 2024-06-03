@@ -86,7 +86,7 @@ def train(model, global_step, train_loader,val_loader,config, dice_val_best, glo
         scaler.step(optimizer)
         scaler.update()
         optimizer.zero_grad()
-        epoch_iterator.set_description(f"Training ({global_step} / {config["max_iterations"]} Steps) (loss={loss:2.5f})")
+        epoch_iterator.set_description(f"Training ({global_step} / {config['max_iterations']} Steps) (loss={loss:2.5f})")
         if (global_step % config["eval_num"] == 0 and global_step != 0) or global_step == config["max_iterations"]:
             epoch_iterator_val = tqdm(val_loader, desc="Validate (X / X Steps) (dice=X.X)", dynamic_ncols=True)
             dice_val = validation(epoch_iterator_val, config, global_step)
