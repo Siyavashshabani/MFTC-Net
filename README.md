@@ -28,9 +28,29 @@ data/
 &nbsp;|---dataset.json  
 
 
+# Running the Code
+
+This repository is built upon the foundational work provided in [SENUCLS](https://github.com/LeonidAlekseev/Swin-UNETR). 
 
 
+## Training
 
-## Results
+Before training the configs.json file should be filled:
+
+### Hyperparameters Configuration
+The following settings can be adjusted in the `config.py` to configure the model training and data management:
+
+- **`data_dir`**: Set the directory path for dataset storage.
+- **`saved_model_dir`**: Set the directory path where trained models and checkpoints will be saved.
+- **`num_samples`**: Define the number of samples used in training process.
+- **`num_classes`**: Specify the number of target classes in the dataset + background.
+- **`input_size`**: Set the size of the input images or data.
+- **`input_channels`**: Define the number of input channels for the data (e.g., grayscale=1, RGB=3).
+- **`feature_size`**: Set the dimension of the feature vectors extracted by the model.
+- **`use_checkpoint`**: Enable or disable the use of model checkpoints for training continuation.
+- **`learning_rate`**: Set the initial learning rate for the optimizer.
+- **`weight_decay`**: Define the weight decay (L2 penalty) rate for regularization.
+- **`max_iterations`**: Specify the maximum number of iterations (or training steps).
+- **`eval_num`**: Set the frequency of evaluations (every `eval_num` iterations) during training.
 
 
