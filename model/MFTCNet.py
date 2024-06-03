@@ -1,8 +1,6 @@
-# from __future__ import annotations
 
 from model.fusion import BiFusion_block_3d
 from model.SwinViT.SwinViT import SwinTransformer
-# from model.SwinViT.SwinViT import MERGING_MODE
 import itertools
 from collections.abc import Sequence
 

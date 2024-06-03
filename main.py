@@ -13,7 +13,7 @@ def main():
     with open('configs.json', 'r') as config_file:
         config = json.load(config_file)
 
-    # datasets
+    # dataset
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     val_loader, train_loader = data_loaders(config["data_dir"], num_samples=config["num_samples"], device=device)
 
