@@ -61,6 +61,14 @@ python3.10 main.py
 ```
 ### Results
 
+## Quantitative
+![](diagram/results_num.png)
+
+
+## Visulization 
+![](diagram/results_vis.png)
+
+
 ### Testing 
 Comming soon 
 
