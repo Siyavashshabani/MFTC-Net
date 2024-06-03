@@ -1,22 +1,22 @@
 
 This is the official PyTorch implementation of the paper - "Multi-Aperture Fusion of Transformer-Convolutional Network (MFTC-Net) for 3D Medical Image Segmentation and Visualization".
 
-## Multi-Aperture Fusion of Transformer-Convolutional Network (MFTC-Net) for 3D Medical Image Segmentation and Visualization
+### Multi-Aperture Fusion of Transformer-Convolutional Network (MFTC-Net) for 3D Medical Image Segmentation and Visualization
 
 ![](diagram/framework.png)
 
-## Set Up Set Up Environment
+### Set Up Set Up Environment
 ```
 python3.10 -m venv MFTCNet_env 
 source MFTCNet_env/bin/activate 
 pip install -r requirements.txt
 ```
 
-## Dataset
+### Dataset
 
 Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 
-# Structure of data folders 
+## Structure of data folders 
 
 data/  
 &nbsp;|---imagesTr/  
@@ -28,7 +28,7 @@ data/
 &nbsp;|---dataset.json  
 
 
-# Running the Code
+### Running the Code
 
 This repository is built upon the foundational work provided in [SENUCLS](https://github.com/LeonidAlekseev/Swin-UNETR). 
 
@@ -54,9 +54,14 @@ The following settings can be adjusted in the `config.py` to configure the model
 - **`eval_num`**: Set the frequency of evaluations (every `eval_num` iterations) during training.
 
 
-## train the model 
+### train the model 
 
 ```
 python3.10 main.py  
 ```
+### Interface 
+Comming soon 
+
+### Citation
+If any part of this code is used, please give appropriate citations to our paper. <br />
 
