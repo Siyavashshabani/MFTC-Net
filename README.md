@@ -10,7 +10,7 @@ Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 data/  
 &nbsp;|---imagesTr/  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---img0001.nii.gz  
-&nbsp;&nbsp&nbsp;&nbsp;;&nbsp;|---img0002.nii.gz  
+&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;|---img0002.nii.gz  
 &nbsp;|---labelsTr/  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---label0001.nii.gz  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---label0002.nii.gz  
