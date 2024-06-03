@@ -1,4 +1,8 @@
 
+This is the official PyTorch implementation of the paper - "Multi-Aperture Fusion of Transformer-Convolutional Network (MFTC-Net) for 3D Medical Image Segmentation and Visualization".
+
+## Multi-Aperture Fusion of Transformer-Convolutional Network (MFTC-Net) for 3D Medical Image Segmentation and Visualization
+
 
 # Quick start
 
