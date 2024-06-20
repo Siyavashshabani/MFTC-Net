@@ -69,8 +69,6 @@ python3.10 main.py
 ![](diagram/results_vis.jpg)
 
 
-## Testing 
-Comming soon 
 
 ## Citation
 If any part of this code is used, please give appropriate citations to our paper. <br />
