@@ -19,8 +19,8 @@ Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 ### Structure of data folders 
 
 data/
-----imagesTr/
--------img0001.nii.gz
+|&nbsp;-------imagesTr/
+|&nbsp;-------img0001.nii.gz
 -------img0002.nii.gz
 ----labelsTr/
 -------label0001.nii.gz
