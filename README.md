@@ -18,14 +18,15 @@ Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 
 ### Structure of data folders 
 
-data/ 
-&nbsp;|---imagesTr/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---img0001.nii.gz  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---img0002.nii.gz  
-&nbsp;|---labelsTr/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---label0001.nii.gz  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---label0002.nii.gz  
-&nbsp;|---dataset.json  
+data/
+│   ├── imagesTr/
+│   │   ├── img0001.nii.gz
+│   │   ├── img0002.nii.gz
+│   ├── labelsTr/
+│   │   ├── label0001.nii.gz
+│   │   ├── label0002.nii.gz
+│   └── dataset.json
+
 
 
 ## Running the Code
