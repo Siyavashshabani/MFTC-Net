@@ -19,13 +19,13 @@ Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 ### Structure of data folders 
 
 data/
-├── imagesTr/
-│   ├── img0001.nii.gz
-│   ├── img0002.nii.gz
-├── labelsTr/
-│   ├── label0001.nii.gz
-│   ├── label0002.nii.gz
-└── dataset.json
+----imagesTr/
+-------img0001.nii.gz
+-------img0002.nii.gz
+----labelsTr/
+-------label0001.nii.gz
+-------label0002.nii.gz
+----dataset.json
 
 
 
