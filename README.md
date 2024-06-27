@@ -27,7 +27,11 @@ Download data from: https://www.synapse.org/#!Synapse:syn3193805/wiki/89480
 -------label0002.nii.gz
 ----dataset.json
 
-
+|-- Data  
+|&nbsp;----- Abnormal  
+|&nbsp;----- Normal  
+&nbsp;&nbsp;&nbsp;&nbsp;--Train  
+&nbsp;&nbsp;&nbsp;&nbsp;--Test
 
 ## Running the Code
 
